@@ -66,6 +66,8 @@ require("lazy").setup({
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
 	{'L3MON4D3/LuaSnip'},
+	{'airblade/vim-gitgutter'},
+	{'dense-analysis/ale'},
 })
 require("solarized-osaka").setup({})
 vim.cmd[[colorscheme solarized-osaka]]
