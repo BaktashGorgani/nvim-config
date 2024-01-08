@@ -1,5 +1,6 @@
 require("baky.remap")
 vim.wo.relativenumber = true
+vim.wo.number = true
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -69,6 +70,8 @@ require("lazy").setup({
 	{'L3MON4D3/LuaSnip'},
 	{'airblade/vim-gitgutter'},
 	{'dense-analysis/ale'},
+	{'psf/black', branch = 'stable'},
+	{'kkoomen/vim-doge', build = ':call doge#install()'},
 })
 require("solarized-osaka").setup({})
 vim.cmd[[colorscheme solarized-osaka]]
