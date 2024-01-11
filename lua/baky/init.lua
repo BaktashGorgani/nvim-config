@@ -1,4 +1,6 @@
 require("baky.remap")
+vim.o.scrolloff = 20
+vim.o.sidescrolloff = 30
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.wo.wrap = false
