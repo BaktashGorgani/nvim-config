@@ -5,6 +5,7 @@ vim.wo.relativenumber = true
 vim.wo.number = true
 vim.wo.wrap = false
 vim.opt.list = true
+vim.opt.virtualedit = "all"
 vim.opt.listchars = {
 	eol = '⏎' ,
 	trail = '●' ,
