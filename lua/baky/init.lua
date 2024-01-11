@@ -85,6 +85,8 @@ require("lazy").setup({
 	{'L3MON4D3/LuaSnip'},
 	{'airblade/vim-gitgutter'},
 	{'dense-analysis/ale'},
+	{'jeetsukumaran/vim-pythonsense'},
+	{'michaeljsmith/vim-indent-object'},
 	{'psf/black', branch = 'stable'},
 	{'kkoomen/vim-doge', build = ':call doge#install()'},
 })
