@@ -1,6 +1,6 @@
 require("baky.remap")
-vim.o.scrolloff = 999
-vim.o.sidescrolloff = 999
+vim.o.scrolloff = 5
+vim.o.sidescrolloff = 5
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.wo.wrap = false
@@ -89,6 +89,7 @@ require("lazy").setup({
 	{'michaeljsmith/vim-indent-object'},
 	{'psf/black', branch = 'stable'},
 	{'kkoomen/vim-doge', build = ':call doge#install()'},
+	{'andweeb/presence.nvim'},
 })
 require("solarized-osaka").setup({})
 vim.cmd[[colorscheme solarized-osaka]]
