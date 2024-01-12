@@ -1,6 +1,6 @@
 require("baky.remap")
-vim.o.scrolloff = 20
-vim.o.sidescrolloff = 30
+vim.o.scrolloff = 999
+vim.o.sidescrolloff = 999
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.wo.wrap = false
@@ -13,7 +13,7 @@ vim.opt.listchars = {
 	extends = '→' ,
 	precedes = '←' ,
 	space = '·' ,
-	tab = '  ┊',
+	tab = '--┊',
 	leadmultispace = '···┊'
 }
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
