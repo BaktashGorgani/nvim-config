@@ -1,0 +1,20 @@
+vim.o.scrolloff = 5
+vim.o.sidescrolloff = 5
+vim.o.encoding = "utf-8"
+vim.o.fileencoding = "utf-8"
+vim.o.guifont = "JetBrains_Mono"
+vim.wo.relativenumber = true
+vim.wo.number = true
+vim.wo.wrap = false
+vim.opt.virtualedit = 'all'
+vim.opt.list = true
+vim.opt.listchars = {
+	eol = '⏎' ,
+	trail = '●' ,
+	nbsp = '⎵' ,
+	extends = '→' ,
+	precedes = '←' ,
+	space = '·' ,
+	tab = '--┊',
+	leadmultispace = '···┊'
+}
