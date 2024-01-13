@@ -43,7 +43,11 @@ require("lazy").setup({
 			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		}
 	},
-	{"theprimeagen/harpoon"},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" }
+	},
 	{"tpope/vim-fugitive"},
 	--- Uncomment these if you want to manage the language servers from neovim
 	{'williamboman/mason.nvim'},
