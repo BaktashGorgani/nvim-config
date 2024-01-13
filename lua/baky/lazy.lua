@@ -33,6 +33,16 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		}
+	},
 	{"theprimeagen/harpoon"},
 	{"tpope/vim-fugitive"},
 	--- Uncomment these if you want to manage the language servers from neovim
@@ -48,7 +58,6 @@ require("lazy").setup({
 	{'dense-analysis/ale'},
 	{'jeetsukumaran/vim-pythonsense'},
 	{'michaeljsmith/vim-indent-object'},
-	{'ms-jpq/chadtree', branch = 'chad', build = 'python3 -m chadtree deps'},
 	{'psf/black', branch = 'stable'},
 	{'kkoomen/vim-doge', build = ':call doge#install()'},
 	{'andweeb/presence.nvim'},
