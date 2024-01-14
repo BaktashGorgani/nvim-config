@@ -21,6 +21,7 @@ require("lazy").setup({
 		config = function()
 			require("telescope").setup({})
 			require("telescope").load_extension("undo")
+			require("telescope").load_extension("aerial")
 		end,
 	},
 	{
@@ -47,6 +48,17 @@ require("lazy").setup({
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" }
+	},
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	},
+	{
+		'stevearc/aerial.nvim',
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons"
+		},
 	},
 	{"tpope/vim-fugitive"},
 	--- Uncomment these if you want to manage the language servers from neovim
