@@ -1,4 +1,13 @@
-require("aerial").setup({
+local aerial = require("aerial")
+aerial.setup({
+	open_automatic = function(bufnr)
+		-- Enforce a minimum line count
+		return vim.api.nvim_buf_line_count(bufnr) > 80
+			-- Enforce a minimum symbol count
+			and aerial.num_symbols(bufnr) > 4
+			-- A useful way to keep aerial closed when closed manually
+			and not aerial.was_closed()
+	end,
 	-- optionally use on_attach to set keymaps when aerial has attached to a buffer
 	on_attach = function(bufnr)
 		-- Jump forwards/backwards with '{' and '}'
