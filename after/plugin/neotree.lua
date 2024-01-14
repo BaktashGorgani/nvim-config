@@ -2,6 +2,27 @@ vim.keymap.set("n", "<leader>v", "<cmd>Neotree toggle<cr>")
 
 require("neo-tree").setup({
 	close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+	default_component_configs = {
+		file_size = {
+			enabled = true,
+			required_width = 36, -- min width of window required to show this column
+		},
+		type = {
+			enabled = true,
+			required_width = 90, -- min width of window required to show this column
+		},
+		last_modified = {
+			enabled = true,
+			required_width = 55, -- min width of window required to show this column
+		},
+		created = {
+			enabled = true,
+			required_width = 75, -- min width of window required to show this column
+		},
+		symlink_target = {
+			enabled = true,
+		},
+	},
 	window = {
 		width = 35,
 	},
