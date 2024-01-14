@@ -7,4 +7,4 @@ end)
 
 --Extension keymaps
 vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
-vim.keymap.set("n", "<leader>a", "<cmd>Telescope aerial<cr>")
+vim.keymap.set("n", "<leader>z", "<cmd>Telescope aerial<cr>")
