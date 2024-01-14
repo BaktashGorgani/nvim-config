@@ -1,3 +1,4 @@
+vim.opt.shell = "bash"
 vim.o.scrolloff = 5
 vim.o.sidescrolloff = 5
 vim.o.encoding = "utf-8"
