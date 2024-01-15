@@ -25,4 +25,8 @@ vim.keymap.set("n", "+", "<cmd>vert res +5<cr>")
 vim.keymap.set("n", "-", "<cmd>vert res -5<cr>")
 
 --JSON Beautify
-vim.keymap.set("n", "<leader>b", "<cmd>:%!python -m json.tool<cr>")
+vim.keymap.set("n", "<leader>b", "<cmd>%!python -m json.tool<cr>")
+
+--Git pull(fetch & merge) and push
+vim.keymap.set("n", "<leader>gf", "<cmd>Git pull<cr>")
+vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>")
