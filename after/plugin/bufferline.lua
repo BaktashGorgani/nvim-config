@@ -8,6 +8,11 @@ bufferline.setup({
 			modified_icon = '●',
 			close_icon = ' ',
 		},
+		hover = {
+			enabled = true,
+			delay = 200,
+			reveal = {'close'}
+		},
 		offsets = {
 			{
 				filetype = "neo-tree",
