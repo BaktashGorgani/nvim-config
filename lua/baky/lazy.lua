@@ -81,4 +81,7 @@ require("lazy").setup({
 	{'ryanoasis/vim-devicons'},
 	{'nvim-tree/nvim-web-devicons'},
 	{'adelarsq/vim-devicons-emoji'},
+	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+	{'backdround/tabscope.nvim'},
+	{'rmagatti/auto-session'},
 })
