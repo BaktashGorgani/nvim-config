@@ -20,9 +20,22 @@ vim.keymap.set('n', '<A-l>', [[<C-w>l]])
 --Space t to open terminal
 vim.keymap.set("n", "<leader>t", "<cmd>terminal<cr>")
 
---Resize windows using + and -
+--Resize based on splits
+vim.keymap.set("n", "<Insert>",[[<C-w>=]])
+
+--Fill Screen horizontally
+vim.keymap.set("n", "<Home>", [[<C-w>_]])
+
+--Fill Screen vertically
+vim.keymap.set("n", "<End>", [[<C-w>|]])
+
+--For vertical windows, resize windows horizontally using + and -
 vim.keymap.set("n", "+", "<cmd>vert res +5<cr>")
 vim.keymap.set("n", "-", "<cmd>vert res -5<cr>")
+
+--For horizontal windows, resize windows vertically using PgUp and PgDn
+vim.keymap.set("n", "<PageUp>", "<cmd>res +5<cr>")
+vim.keymap.set("n", "<PageDown>", "<cmd>res -5<cr>")
 
 --JSON Beautify
 vim.keymap.set("n", "<leader>b", "<cmd>%!python -m json.tool<cr>")
