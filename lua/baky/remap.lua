@@ -23,3 +23,6 @@ vim.keymap.set("n", "<leader>t", "<cmd>terminal<cr>")
 --Resize windows using + and -
 vim.keymap.set("n", "+", "<cmd>vert res +5<cr>")
 vim.keymap.set("n", "-", "<cmd>vert res -5<cr>")
+
+--JSON Beautify
+vim.keymap.set("n", "<leader>b", "<cmd>:%!python -m json.tool<cr>")
