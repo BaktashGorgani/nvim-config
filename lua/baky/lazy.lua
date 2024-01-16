@@ -82,4 +82,5 @@ require("lazy").setup({
 	{'nvim-tree/nvim-web-devicons'},
 	{'adelarsq/vim-devicons-emoji'},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+	{'rafi/awesome-vim-colorschemes'},
 })

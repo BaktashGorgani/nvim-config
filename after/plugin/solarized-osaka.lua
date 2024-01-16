@@ -1,2 +1,2 @@
-require("solarized-osaka").setup({})
-vim.cmd[[colorscheme solarized-osaka]]
+--require("solarized-osaka").setup({})
+--vim.cmd[[colorscheme solarized-osaka]]
