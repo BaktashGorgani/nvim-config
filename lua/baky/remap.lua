@@ -23,10 +23,10 @@ vim.keymap.set("n", "<leader>t", "<cmd>terminal<cr>")
 --Resize based on splits
 vim.keymap.set("n", "<Insert>",[[<C-w>=]])
 
---Fill Screen horizontally
+--Fill Screen vertically
 vim.keymap.set("n", "<Home>", [[<C-w>_]])
 
---Fill Screen vertically
+--Fill Screen horizontally
 vim.keymap.set("n", "<End>", [[<C-w>|]])
 
 --For vertical windows, resize windows horizontally using + and -
