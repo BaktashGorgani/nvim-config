@@ -5,3 +5,7 @@ vim.keymap.set("n", "<leader>gp", "<cmd>Git push<cr>")
 
 --Git Log
 vim.keymap.set("n", "<leader>gl", "<cmd>Git log<cr>")
+
+--Git stash and pop
+vim.keymap.set("n", "<leader>gst", "<cmd>Git stash<cr>")
+vim.keymap.set("n", "<leader>gsp", "<cmd>Git stash pop<cr>")
