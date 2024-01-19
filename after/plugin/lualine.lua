@@ -1,3 +1,3 @@
 require('lualine').setup{
-	extensions = {'neo-tree'},
+    extensions = {'neo-tree'},
 }

@@ -39,3 +39,32 @@ vim.keymap.set("n", "<PageDown>", "<cmd>res -5<cr>")
 
 --JSON Beautify
 vim.keymap.set("n", "<leader>b", "<cmd>%!python -m json.tool<cr>")
+
+--Move selected line / block of text in visual mode
+vim.keymap.set("v", "K", ":move '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":move '>+1<CR>gv=gv")
+
+--Keep cursor after joining lines
+vim.keymap.set("n", "J", "mzJ`z")
+
+--System clipboard
+vim.keymap.set("v", "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("v", "<leader>p", [["+p]])
+vim.keymap.set("n", "<leader>p", [["+p]])
+vim.keymap.set("n", "<leader>P", [["+P]])
+
+--CTRL + C to Escape
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
+--Replace word under cursor
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+--Make file executable
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+--shout out file
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
