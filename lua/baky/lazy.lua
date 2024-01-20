@@ -60,6 +60,26 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons"
         },
     },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    },
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+    },
     {"tpope/vim-fugitive"},
     --- Uncomment these if you want to manage the language servers from neovim
     {'williamboman/mason.nvim'},
@@ -83,5 +103,5 @@ require("lazy").setup({
     {'adelarsq/vim-devicons-emoji'},
     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {'rafi/awesome-vim-colorschemes'},
-    {'github/copilot.vim'},
+    {'AndreM222/copilot-lualine'},
 })
