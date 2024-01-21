@@ -38,7 +38,7 @@ vim.keymap.set("n", "<PageUp>", "<cmd>res +5<cr>")
 vim.keymap.set("n", "<PageDown>", "<cmd>res -5<cr>")
 
 --JSON Beautify
-vim.keymap.set("n", "<leader>b", "<cmd>%!python -m json.tool<cr>")
+vim.keymap.set("n", "<leader>jb", "<cmd>%!python -m json.tool<cr>")
 
 --Move selected line / block of text in visual mode
 vim.keymap.set("v", "K", ":move '<-2<CR>gv=gv")

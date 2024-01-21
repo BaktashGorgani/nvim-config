@@ -80,6 +80,23 @@ require("lazy").setup({
         cmd = "Copilot",
         event = "InsertEnter",
     },
+    {
+        'fisadev/vim-isort',
+        ft = 'python',
+        config =function ()
+            vim.cmd('autocmd BufWritePre *.py execute ":Isort"')
+        end
+    },
+    {
+        'psf/black',
+        branch = 'stable',
+        ft = 'python',
+        config =function ()
+            vim.cmd('autocmd BufWritePre *.py execute ":Black"')
+        end
+    },
+    {"mfussenegger/nvim-dap"},
+    {"mfussenegger/nvim-dap-python"},
     {"tpope/vim-fugitive"},
     --- Uncomment these if you want to manage the language servers from neovim
     {'williamboman/mason.nvim'},
@@ -91,10 +108,8 @@ require("lazy").setup({
     {'hrsh7th/nvim-cmp'},
     {'L3MON4D3/LuaSnip'},
     {'airblade/vim-gitgutter'},
-    {'dense-analysis/ale'},
     {'jeetsukumaran/vim-pythonsense'},
     {'michaeljsmith/vim-indent-object'},
-    {'psf/black', branch = 'stable'},
     {'kkoomen/vim-doge', build = ':call doge#install()'},
     {'andweeb/presence.nvim'},
     {'tiagofumo/vim-nerdtree-syntax-highlight'},
@@ -104,4 +119,5 @@ require("lazy").setup({
     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {'rafi/awesome-vim-colorschemes'},
     {'AndreM222/copilot-lualine'},
+    {'mfussenegger/nvim-lint'},
 })
