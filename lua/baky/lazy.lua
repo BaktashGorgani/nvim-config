@@ -12,6 +12,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+    {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         -- or                              , branch = '0.1.x',
         dependencies = {

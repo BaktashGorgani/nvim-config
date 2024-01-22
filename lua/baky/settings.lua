@@ -15,7 +15,7 @@ vim.opt.undofile = false
 --vim.opt.incsearch = true
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "88"
 
 vim.o.scrolloff = 5
 vim.o.sidescrolloff = 5
