@@ -17,3 +17,4 @@ aerial.setup({
 })
 -- You probably also want to set a keymap to toggle aerial
 vim.keymap.set("n", "<leader>s", "<cmd>AerialToggle<cr>")
+vim.keymap.set("n", "<leader>st", "<cmd>Telescope aerial<cr>")
