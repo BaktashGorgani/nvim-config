@@ -9,3 +9,6 @@ vim.keymap.set("n", "<leader>gl", "<cmd>Git log<cr>")
 --Git stash and pop
 vim.keymap.set("n", "<leader>gst", "<cmd>Git stash<cr>")
 vim.keymap.set("n", "<leader>gsp", "<cmd>Git stash pop<cr>")
+
+--Git zip
+vim.keymap.set("n", "<leader>gz", "<cmd>Git archive --format zip --output git.zip main<cr>")
