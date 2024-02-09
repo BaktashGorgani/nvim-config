@@ -1,3 +1,6 @@
+vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
+local git_blame = require('gitblame')
+
 local colors = {
     red = '#cdd6f4',
     grey = '#181825',
@@ -124,6 +127,13 @@ local copilot = {
     color = { bg = "#313244" , fg = "red"},
 }
 
+local gitblame = {
+    git_blame.get_current_blame_text,
+    cond = git_blame.is_blame_text_available,
+    separator = { left = "", right = "" },
+    color = { bg = "#313244" , fg = "white"},
+}
+
 local dia = {
     'diagnostics',
     color = { bg = "#313244", fg = "#80A7EA" },
@@ -177,6 +187,8 @@ require('lualine').setup {
             diff,
         },
         lualine_x = {
+            gitblame,
+            space,
             copilot,
             space,
         },
