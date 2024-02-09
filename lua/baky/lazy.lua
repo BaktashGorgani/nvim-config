@@ -11,15 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 local function get_git_diff(staged)
-  local cmd = staged and "git diff --staged" or "git diff"
-  local handle = io.popen(cmd)
-  if not handle then
-    return ""
-  end
+    local cmd = staged and "git diff --staged" or "git diff"
+    local handle = io.popen(cmd)
+    if not handle then
+        return ""
+    end
 
-  local result = handle:read("*a")
-  handle:close()
-  return result
+    local result = handle:read("*a")
+    handle:close()
+    return result
 end
 
 local prompts = {
@@ -182,6 +182,33 @@ require("lazy").setup({
     {'rafi/awesome-vim-colorschemes'},
     {'AndreM222/copilot-lualine'},
     {'mfussenegger/nvim-lint'},
+    {'HiPhish/rainbow-delimiters.nvim'},
+    {
+        -- https://github.com/f-person/git-blame.nvim
+        'f-person/git-blame.nvim',
+        event = 'VeryLazy',
+        opts = {
+            enabled = false, -- disable by default, enabled only on keymap
+            date_format = '%m/%d/%y %H:%M:%S', -- more concise date format
+        }
+    },
+    {
+        -- https://github.com/theHamsta/nvim-dap-virtual-text
+        'theHamsta/nvim-dap-virtual-text',
+        lazy = true,
+        opts = {
+            -- Display debug text as a comment
+            commented = true,
+            -- Customize virtual text
+            display_callback = function(variable, buf, stackframe, node, options)
+                if options.virt_text_pos == 'inline' then
+                    return ' = ' .. variable.value
+                else
+                    return variable.name .. ' = ' .. variable.value
+                end
+            end,
+        }
+    },
     {
         -- https://github.com/rcarriga/nvim-dap-ui
         'rcarriga/nvim-dap-ui',

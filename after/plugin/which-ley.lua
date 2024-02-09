@@ -1,5 +1,11 @@
 local wk = require("which-key")
 
+wk.setup({
+    triggers_blacklist = {
+        i = { "<leader>" },
+    },
+})
+
 wk.register({
     ["<leader>"] = {
         ["<leader>"] = "Source file",
@@ -10,6 +16,7 @@ wk.register({
             name = "Git",
             z = "Git zip",
             s = "Git stash",
+            b = "Git blame",
         },
         j = {
             name = "Json",
