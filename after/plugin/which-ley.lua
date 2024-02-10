@@ -52,5 +52,10 @@ wk.register({
             h = "Commands",
             e = "Diagnostics",
         },
+        t = {
+            name = "Dap Test",
+            c = "Test class",
+            m = "Test method",
+        },
     }
 })
