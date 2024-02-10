@@ -185,6 +185,7 @@ require('lualine').setup {
             space,
             branch,
             diff,
+            space,
         },
         lualine_x = {
             gitblame,

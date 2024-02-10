@@ -255,32 +255,38 @@ require("lazy").setup({
                     elements = {
                         {
                             id = "scopes",
-                            size = 0.50
-                        },
-                        {
-                            id = "stacks",
-                            size = 0.30
+                            size = 0.35
                         },
                         {
                             id = "watches",
-                            size = 0.10
+                            size = 0.35
+                        },
+                        {
+                            id = "stacks",
+                            size = 0.15
                         },
                         {
                             id = "breakpoints",
-                            size = 0.10
+                            size = 0.15
                         }
                     },
-                    size = 40,
+                    size = 65,
                     position = "left", -- Can be "left" or "right"
                 },
                 {
                     elements = {
-                        "repl",
                         "console",
                     },
-                    size = 10,
+                    size = 14,
                     position = "bottom", -- Can be "bottom" or "top"
-                }
+                },
+                {
+                    elements = {
+                        "repl",
+                    },
+                    size = 14,
+                    position = "bottom", -- Can be "bottom" or "top"
+                },
             },
             mappings = {
                 edit = "e",
