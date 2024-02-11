@@ -29,7 +29,7 @@ local prompts = {
     Tests = "Please explain how the selected code works, then generate unit tests for it.",
     Refactor = "Please refactor the following code to improve its clarity and readability.",
     FixCode = "Please fix the following code to make it work as intended.",
-    BetterNamings = "Please provide better names for the following variables and functions.",
+    BetterNamings = "Please refactor the code with better names for the following variables and functions.",
     Documentation = "Please provide documentation for the following code.",
     -- Text related prompts
     Summarize = "Please summarize the following text.",
