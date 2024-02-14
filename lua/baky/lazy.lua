@@ -140,9 +140,7 @@ require("lazy").setup({
         end
     },
     {
-        -- https://github.com/szw/vim-maximizer
-        'szw/vim-maximizer',
-        event = 'VeryLazy',
+        "0x00-ketsu/maximizer.nvim",
     },
     {
         "folke/which-key.nvim",

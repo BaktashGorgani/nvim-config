@@ -57,5 +57,11 @@ wk.register({
             c = "Test class",
             m = "Test method",
         },
+        m = {
+            name = "Maximizer",
+            m = "Maximize",
+            r = "Restore",
+            t = "Toggle",
+        }
     }
 })
