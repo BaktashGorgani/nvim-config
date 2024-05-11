@@ -186,6 +186,7 @@ require("lazy").setup({
     {'AndreM222/copilot-lualine'},
     {'mfussenegger/nvim-lint'},
     {'HiPhish/rainbow-delimiters.nvim'},
+    {"folke/neodev.nvim", opts = {}},
     {
         -- https://github.com/f-person/git-blame.nvim
         'f-person/git-blame.nvim',
@@ -222,6 +223,7 @@ require("lazy").setup({
             'theHamsta/nvim-dap-virtual-text', -- inline variable text while debugging
             -- https://github.com/nvim-telescope/telescope-dap.nvim
             'nvim-telescope/telescope-dap.nvim', -- telescope integration with dap
+            "nvim-neotest/nvim-nio",
         },
         opts = {
             controls = {
