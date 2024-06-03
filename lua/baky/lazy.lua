@@ -155,6 +155,7 @@ require("lazy").setup({
             -- refer to the configuration section below
         }
     },
+    {'wakatime/vim-wakatime', lazy = false},
     {"mfussenegger/nvim-dap"},
     {"mfussenegger/nvim-dap-python"},
     {"tpope/vim-fugitive"},
