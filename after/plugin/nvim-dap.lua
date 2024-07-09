@@ -19,3 +19,48 @@ keymap.set("n", '<leader>d?', function() local widgets = require "dap.ui.widgets
 keymap.set("n", '<leader>df', '<cmd>Telescope dap frames<cr>')
 keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>')
 keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end)
+
+
+local dap = require('dap')
+-- Dart / Flutter
+dap.adapters.dart = {
+  type = 'executable',
+  command = 'dart',
+  args = {'debug_adapter'}
+}
+dap.adapters.flutter = {
+  type = 'executable',
+  command = 'flutter',
+  args = {'debug_adapter'}
+}
+dap.configurations.dart = {
+  {
+    type = "dart",
+    request = "launch",
+    name = "Launch dart",
+    dartSdkPath = "usr/share/flutter/bin/dart", -- ensure this is correct
+    flutterSdkPath = "usr/share/flutter",                  -- ensure this is correct
+    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
+    cwd = "${workspaceFolder}",
+  },
+  {
+    type = "flutter",
+    request = "launch",
+    name = "Launch flutter (Linux)",
+    dartSdkPath = "usr/share/flutter/bin/dart", -- ensure this is correct
+    flutterSdkPath = "usr/share/flutter",             -- ensure this is correct
+    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
+    cwd = "${workspaceFolder}",
+    toolargs = {"-d", "linux"},
+  },
+  {
+    type = "flutter",
+    request = "launch",
+    name = "Launch flutter (Galaxy fold)",
+    dartSdkPath = "usr/share/flutter/bin/dart", -- ensure this is correct
+    flutterSdkPath = "usr/share/flutter",             -- ensure this is correct
+    program = "${workspaceFolder}/lib/main.dart",     -- ensure this is correct
+    cwd = "${workspaceFolder}",
+    toolargs = {"-d", "android"},
+  },
+}

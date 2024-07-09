@@ -66,6 +66,7 @@ require("lazy").setup({
             require("telescope").setup({})
             require("telescope").load_extension("undo")
             require("telescope").load_extension("aerial")
+            require("telescope").load_extension("flutter")
         end,
     },
     {
@@ -154,6 +155,15 @@ require("lazy").setup({
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
         }
+    },
+    {
+        'akinsho/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+        config = true,
     },
     {'wakatime/vim-wakatime', lazy = false},
     {"mfussenegger/nvim-dap"},

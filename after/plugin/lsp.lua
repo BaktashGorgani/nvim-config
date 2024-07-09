@@ -20,6 +20,15 @@ end)
 require'lspconfig'.jedi_language_server.setup{}
 require'lspconfig'.gopls.setup{}
 
+require('flutter-tools').setup({
+    debugger = {
+        run_via_dap = true,
+    },
+    lsp = {
+        capabilities = lsp_zero.get_capabilities()
+    },
+})
+
 require'lspconfig'.lua_ls.setup {
     on_init = function(client)
         local path = client.workspace_folders[1].name
