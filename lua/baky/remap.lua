@@ -1,8 +1,5 @@
 vim.g.mapleader = " "
 
---Be able to escape from terminal mode
-vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
-
 --Move to any window using alt plus movement keys
 vim.keymap.set('t', '<A-h>', [[<C-\><C-N><C-w>h]])
 vim.keymap.set('t', '<A-j>', [[<C-\><C-N><C-w>j]])
@@ -17,8 +14,14 @@ vim.keymap.set('n', '<A-j>', [[<C-w>j]])
 vim.keymap.set('n', '<A-k>', [[<C-w>k]])
 vim.keymap.set('n', '<A-l>', [[<C-w>l]])
 
+--Clear search highlights
+vim.keymap.set("n", "<leader>h", "<cmd>noh<cr>")
+
 --Space t to open terminal
 vim.keymap.set("n", "<leader>t", "<cmd>terminal<cr>")
+
+--Be able to escape from terminal mode
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 
 --Resize based on splits
 vim.keymap.set("n", "<Insert>",[[<C-w>=]])
