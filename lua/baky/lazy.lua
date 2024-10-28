@@ -143,6 +143,7 @@ require("lazy").setup({
     {
         "0x00-ketsu/maximizer.nvim",
     },
+    {'echasnovski/mini.nvim', version = false},
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -151,10 +152,7 @@ require("lazy").setup({
             vim.o.timeoutlen = 300
         end,
         opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
+        },
     },
     {
         'akinsho/flutter-tools.nvim',
@@ -182,6 +180,7 @@ require("lazy").setup({
         "L3MON4D3/LuaSnip",
         dependencies = { "rafamadriz/friendly-snippets" },
     },
+    { "Nash0x7E2/awesome-flutter-snippets" },
     { "rafamadriz/friendly-snippets" },
     {'airblade/vim-gitgutter'},
     {'jeetsukumaran/vim-pythonsense'},
@@ -214,6 +213,7 @@ require("lazy").setup({
             -- Display debug text as a comment
             commented = true,
             -- Customize virtual text
+            ---@diagnostic disable-next-line: unused-local
             display_callback = function(variable, buf, stackframe, node, options)
                 if options.virt_text_pos == 'inline' then
                     return ' = ' .. variable.value

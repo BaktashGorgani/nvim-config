@@ -6,6 +6,7 @@ require("neodev").setup({
 
 local lsp_zero = require('lsp-zero')
 
+---@diagnostic disable-next-line: unused-local
 lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
@@ -59,3 +60,7 @@ require'lspconfig'.lua_ls.setup {
         return true
     end
 }
+
+-- keymaps
+
+vim.keymap.set("n", "<M-CR>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
