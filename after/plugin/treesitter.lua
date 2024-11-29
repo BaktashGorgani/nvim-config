@@ -19,3 +19,8 @@ configs.setup({
     highlight = { enable = true },
     indent = { enable = true },
 })
+
+-- for hyprlang
+vim.filetype.add({
+  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})

@@ -20,6 +20,8 @@ end)
 
 require'lspconfig'.jedi_language_server.setup{}
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.hyprls.setup{}
+require'lspconfig'.bashls.setup{}
 
 require('flutter-tools').setup({
     debugger = {
