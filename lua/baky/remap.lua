@@ -4,8 +4,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<C-A-h>", "<cmd>bp<cr>")
 vim.keymap.set("n", "<C-A-l>", "<cmd>bn<cr>")
 
---Delete buffer
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
+--Close buffer
+vim.keymap.set("n", "<leader>bd", "<cmd>b#<bar>bd#<cr>")
 --Move to any window using alt plus movement keys
 vim.keymap.set('t', '<A-h>', [[<C-\><C-N><C-w>h]])
 vim.keymap.set('t', '<A-j>', [[<C-\><C-N><C-w>j]])

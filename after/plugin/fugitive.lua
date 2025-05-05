@@ -12,3 +12,6 @@ vim.keymap.set("n", "<leader>gsp", "<cmd>Git stash pop<cr>")
 
 --Git zip
 vim.keymap.set("n", "<leader>gz", "<cmd>Git archive --format zip --output git.zip main<cr>")
+
+--Git add
+vim.keymap.set("n", "<leader>ga", "<cmd>Git add %<cr>")

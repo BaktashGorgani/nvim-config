@@ -160,6 +160,7 @@ require("lazy").setup({
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
     {'saadparwaiz1/cmp_luasnip'},
+    {'momota/cisco.vim'},
     {
         "L3MON4D3/LuaSnip",
         dependencies = { "rafamadriz/friendly-snippets" },
