@@ -180,6 +180,7 @@ require("lazy").setup({
     {'AndreM222/copilot-lualine'},
     {'mfussenegger/nvim-lint'},
     {'HiPhish/rainbow-delimiters.nvim'},
+    {'momota/cisco.vim'},
     {"folke/neodev.nvim", opts = {}},
     {
         -- https://github.com/f-person/git-blame.nvim
@@ -222,18 +223,16 @@ require("lazy").setup({
         },
     },
     {
-      {
         "CopilotC-Nvim/CopilotChat.nvim",
-        branch = "canary",
+        branch = "main",
         dependencies = {
-          { "zbirenbaum/copilot.lua" },
-          { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+            { "zbirenbaum/copilot.lua" },
+            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
         },
         build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
-          -- See Configuration section for options
+            -- See Configuration section for options
         },
         -- See Commands section for default commands if you want to lazy load on them
-      },
-    }
+    },
 })
