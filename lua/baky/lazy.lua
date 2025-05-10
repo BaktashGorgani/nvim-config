@@ -182,6 +182,7 @@ require("lazy").setup({
     {'mfussenegger/nvim-lint'},
     {'HiPhish/rainbow-delimiters.nvim'},
     {'momota/cisco.vim'},
+    {'rrethy/vim-illuminate'},
     {"folke/neodev.nvim", opts = {}},
     {
         -- https://github.com/f-person/git-blame.nvim

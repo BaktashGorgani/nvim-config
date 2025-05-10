@@ -11,9 +11,6 @@ vim.opt.backup = false
 vim.opt.undodir = vim.fn.expand("~/.vim/undo")
 vim.opt.undofile = false
 
---vim.opt.hlsearch = false
---vim.opt.incsearch = true
-
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "88"
 
