@@ -40,20 +40,6 @@ require("lazy").setup({
         }
     },
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
-        -- or                              , branch = '0.1.x',
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "debugloop/telescope-undo.nvim",
-        },
-        config = function()
-            require("telescope").setup({})
-            require("telescope").load_extension("undo")
-            require("telescope").load_extension("aerial")
-            require("telescope").load_extension("flutter")
-        end,
-    },
-    {
         "craftzdog/solarized-osaka.nvim",
         lazy = false,
         priority = 1000,
@@ -219,8 +205,6 @@ require("lazy").setup({
             'mfussenegger/nvim-dap',
             -- https://github.com/theHamsta/nvim-dap-virtual-text
             'theHamsta/nvim-dap-virtual-text', -- inline variable text while debugging
-            -- https://github.com/nvim-telescope/telescope-dap.nvim
-            'nvim-telescope/telescope-dap.nvim', -- telescope integration with dap
             "nvim-neotest/nvim-nio",
         },
     },
@@ -236,5 +220,13 @@ require("lazy").setup({
             -- See Configuration section for options
         },
         -- See Commands section for default commands if you want to lazy load on them
+    },
+    {
+      "ibhagwan/fzf-lua",
+      -- optional for icon support
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+      -- or if using mini.icons/mini.nvim
+      -- dependencies = { "echasnovski/mini.icons" },
+      opts = {}
     },
 })
