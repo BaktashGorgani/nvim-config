@@ -224,6 +224,16 @@ require("lazy").setup({
         build = "make tiktoken", -- Only on MacOS or Linux
         opts = {
             -- See Configuration section for options
+            prompts = {
+                -- Short git message
+                ShortCommit = {
+                    prompt = "Write a one line commit message for the change with \z
+                    commitizen convention. Format as a gitcommit code block. ",
+                    system_message = "Write a one line commit message for the change with \z
+                    commitizen convention. Format as a gitcommit code block. ",
+                }
+
+            }
         },
         -- See Commands section for default commands if you want to lazy load on them
     },
