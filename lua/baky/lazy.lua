@@ -227,10 +227,12 @@ require("lazy").setup({
             prompts = {
                 -- Short git message
                 ShortCommit = {
-                    prompt = "Write a one line commit message for the change with \z
-                    commitizen convention. Format as a gitcommit code block. ",
-                    system_message = "Write a one line commit message for the change with \z
-                    commitizen convention. Format as a gitcommit code block. ",
+                    prompt = "#git:`staged`:Write a one line commit \z
+                    message for the staged changes with commitizen convention. \z
+                    Format as a gitcommit code block. ",
+                    system_prompt = "#git:`staged`:Write a one line commit \z
+                    message for the staged changes with commitizen convention. \z
+                    Format as a gitcommit code block. ",
                 }
 
             }
