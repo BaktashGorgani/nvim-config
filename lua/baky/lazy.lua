@@ -167,8 +167,18 @@ require("lazy").setup({
     {'ryanoasis/vim-devicons'},
     {'nvim-tree/nvim-web-devicons'},
     {'adelarsq/vim-devicons-emoji'},
-    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
     {'rafi/awesome-vim-colorschemes'},
+
+    -- colorschemes
+    {"luisiacc/gruvbox-baby"},
+    {"tanvirtin/monokai.nvim"},
+    {"Tsuzat/NeoSolarized.nvim"},
+    {"olimorris/onedarkpro.nvim"},
+    {"folke/tokyonight.nvim"},
+    {"tiagovla/tokyodark.nvim"},
+    {"ray-x/starry.nvim"},
+    {"sainnhe/sonokai"},
+
     {'AndreM222/copilot-lualine'},
     {'mfussenegger/nvim-lint'},
     {'HiPhish/rainbow-delimiters.nvim'},
