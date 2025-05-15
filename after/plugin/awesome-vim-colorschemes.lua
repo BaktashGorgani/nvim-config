@@ -11,8 +11,6 @@ local colorschemes = {
 
 local colorscheme = colorschemes[math.random(#colorschemes)]
 
-print("Random colorscheme: " .. colorscheme)
-
 vim.cmd.colorscheme(colorscheme)
 
 vim.api.nvim_set_hl(0, "Search", {
