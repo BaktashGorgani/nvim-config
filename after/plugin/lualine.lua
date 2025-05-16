@@ -1,7 +1,36 @@
 vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
 local git_blame = require('gitblame')
 
+local background
+local foreground
+
+local colorscheme = vim.api.nvim_get_hl(0,{
+    name = "Normal"
+})
+
+local neotreeColors = vim.api.nvim_get_hl(0,{
+    name = "NeoTreeNormal"
+})
+
+if colorscheme["bg"] then
+    background = string.format("#%x", colorscheme["bg"])
+else
+    background = "#0"
+end
+
+if not neotreeColors["bg"] or neotreeColors["bg"] == colorscheme["bg"] then
+    if background == "#0" or background == "#11121d" or background == "#26292c" then
+        foreground = "#2C2C2C"
+    else
+        foreground = "#0"
+    end
+else
+    foreground = string.format("#%x", neotreeColors["bg"])
+end
+
 local colors = {
+    background = background,
+    foreground = foreground,
     red = '#cdd6f4',
     grey = '#181825',
     black = '#1e1e2e',
@@ -16,8 +45,7 @@ local theme = {
     normal = {
         a = { fg = colors.black, bg = colors.blue },
         b = { fg = colors.blue, bg = colors.white },
-        c = { fg = colors.white, bg = colors.black },
-        z = { fg = colors.white, bg = colors.black },
+        c = { fg = colors.white, bg = colors.background },
     },
     insert = { a = { fg = colors.black, bg = "red" } },
     visual = { a = { fg = colors.black, bg = "magenta" } },
@@ -29,14 +57,14 @@ local vim_icons = {
         return " "
     end,
     separator = { left = "", right = "" },
-    color = { bg = "#313244", fg = "#80A7EA" },
+    color = { bg = colors.foreground, fg = "#80A7EA" },
 }
 
 local space = {
     function()
         return " "
     end,
-    color = { bg = colors.black, fg = "#80A7EA" },
+    color = { bg = colors.background },
 }
 
 local filename = {
@@ -49,7 +77,7 @@ local filetype = {
     "filetype",
     icon_only = true,
     colored = true,
-    color = { bg = "#313244" },
+    color = { bg = colors.foreground },
     separator = { left = "", right = "" },
 }
 
@@ -61,7 +89,7 @@ local fileformat = {
 
 local encoding = {
     'encoding',
-    color = { bg = "#313244", fg = "#80A7EA" },
+    color = { bg = colors.foreground, fg = "#80A7EA" },
     separator = { left = "", right = "" },
 }
 
@@ -73,7 +101,7 @@ local branch = {
 
 local diff = {
     "diff",
-    color = { bg = "#313244", fg = "#313244" },
+    color = { bg = colors.foreground, fg = "#313244" },
     separator = { left = "", right = "" },
 }
 
@@ -124,19 +152,19 @@ end
 local copilot = {
     'copilot',
     separator = { left = "", right = "" },
-    color = { bg = "#313244" , fg = "red"},
+    color = { bg = colors.foreground, fg = "red"},
 }
 
 local gitblame = {
     git_blame.get_current_blame_text,
     cond = git_blame.is_blame_text_available,
     separator = { left = "", right = "" },
-    color = { bg = "#313244" , fg = "white"},
+    color = { bg = colors.foreground, fg = "white"},
 }
 
 local dia = {
     'diagnostics',
-    color = { bg = "#313244", fg = "#80A7EA" },
+    color = { bg = colors.foreground, fg = "#80A7EA" },
     separator = { left = "", right = "" },
 }
 
@@ -212,9 +240,3 @@ require('lualine').setup {
         lualine_z = {}
     },
 }
---require('lualine').setup{
---    sections = {
---        lualine_x = { 'copilot' ,'encoding', 'fileformat', 'filetype' },
---    },
---    extensions = {'neo-tree'},
---}
