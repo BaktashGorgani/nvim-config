@@ -40,6 +40,7 @@ require("lazy").setup({
     },
     {
         "saghen/blink.cmp",
+        version = '1.*'
     },
     {
         "xzbdmw/colorful-menu.nvim",
