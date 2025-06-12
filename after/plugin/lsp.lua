@@ -16,6 +16,7 @@ require'lspconfig'.jedi_language_server.setup{}
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.hyprls.setup{}
 require'lspconfig'.bashls.setup{}
+require'lspconfig'.rust_analyzer.setup{}
 
 require('flutter-tools').setup({
     debugger = {
