@@ -35,3 +35,4 @@ vim.opt.listchars = {
     tab = '--┊',
     leadmultispace = '···┊'
 }
+vim.opt.laststatus = 3
