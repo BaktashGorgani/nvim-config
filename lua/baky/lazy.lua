@@ -168,10 +168,11 @@ require("lazy").setup({
         event = "InsertEnter",
     },
     {
-        'fisadev/vim-isort',
+        'stsewd/isort.nvim',
         ft = 'python',
-        config =function ()
-            vim.cmd('autocmd BufWritePre *.py execute ":Isort"')
+        build = ':UpdateRemotePlugins',
+        config = function()
+            vim.cmd('autocmd BufWritePre *.py execute ":IsortSync"')
         end
     },
     {
