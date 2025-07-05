@@ -366,7 +366,18 @@ require("lazy").setup({
         opts = {
             -- add any opts here
             -- for example
-            provider = "copilot",
+            --provider = "copilot",
+            provider = "gemini", -- Set Gemini as the primary provider
+            providers = {
+                gemini = {
+                  model = "gemini-2.5-pro",
+                  timeout = 30000, -- Timeout in milliseconds
+                  temperature = 0.7, -- Adjust for creativity (0.0 - 1.0)
+                  max_tokens = 8192, -- Maximum tokens to generate
+                  -- You can also add other generationConfig parameters here if needed
+                  -- e.g., generationConfig = { stopSequences = {"END_CODE"}, },
+                },
+            },
         },
         -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
         build = "make",
