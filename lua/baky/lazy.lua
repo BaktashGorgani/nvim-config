@@ -171,15 +171,13 @@ require("lazy").setup({
         'stsewd/isort.nvim',
         ft = 'python',
         build = ':UpdateRemotePlugins',
-        config = function()
-            vim.cmd('autocmd BufWritePre *.py execute ":IsortSync"')
-        end
     },
     {
         'psf/black',
         branch = 'stable',
         ft = 'python',
         config =function ()
+            vim.cmd('autocmd BufWritePre *.py execute ":IsortSync"')
             vim.cmd('autocmd BufWritePre *.py execute ":Black"')
         end
     },
