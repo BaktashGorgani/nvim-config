@@ -59,6 +59,5 @@ require'lspconfig'.lua_ls.setup {
 }
 
 -- keymaps
-
-vim.keymap.set("n", "<TAB>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
-vim.keymap.set("v", "<TAB>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+vim.keymap.set("n", "<A-TAB>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+vim.keymap.set("v", "<A-TAB>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
