@@ -1,5 +1,6 @@
+local copilot = require("copilot")
 vim.keymap.set("n", "<leader>c", "<cmd>Copilot panel<cr>")
-require('copilot').setup({
+copilot.setup({
     suggestion = {
         auto_trigger = true,
         keymap = {
@@ -9,3 +10,5 @@ require('copilot').setup({
         }
     }
 })
+
+vim.cmd("Copilot disable")
