@@ -18,14 +18,14 @@ require'lspconfig'.hyprls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 
-require('flutter-tools').setup({
-    debugger = {
-        run_via_dap = true,
-    },
-    lsp = {
-        capabilities = lsp_zero.get_capabilities()
-    },
-})
+--require('flutter-tools').setup({
+--    debugger = {
+--        run_via_dap = true,
+--    },
+--    lsp = {
+--        capabilities = lsp_zero.get_capabilities()
+--    },
+--})
 
 require'lspconfig'.lua_ls.setup {
     on_init = function(client)
@@ -57,7 +57,3 @@ require'lspconfig'.lua_ls.setup {
         return true
     end
 }
-
--- keymaps
-vim.keymap.set("n", "<A-TAB>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
-vim.keymap.set("v", "<A-TAB>", "<cmd>lua vim.lsp.buf.code_action()<cr>")

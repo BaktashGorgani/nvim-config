@@ -1,3 +1,43 @@
+vim.cmd[[set background=dark]]
+
+local colorschemes = {
+    "solarized-osaka",
+    "gruvbox-baby",
+    "monokai_soda",
+    "NeoSolarized",
+    "onedark_dark",
+    "tokyonight-night",
+    "tokyodark",
+    "sonokai",
+}
+
+local colorscheme = colorschemes[math.random(#colorschemes)]
+vim.cmd.colorscheme(colorscheme)
+
+vim.api.nvim_set_hl(0, "Search", {
+    bold = true,
+    italic = true,
+    underline = true,
+    fg = "NvimDarkGrey1",
+    bg = "NvimDarkGreen",
+})
+
+vim.api.nvim_set_hl(0, "IncSearch", {
+    bold = true,
+    italic = true,
+    underline = true,
+    fg = "NvimDarkGrey1",
+    bg = "NvimDarkGreen",
+})
+
+vim.api.nvim_set_hl(0, "CurSearch", {
+    bold = true,
+    italic = true,
+    underline = true,
+    fg = "NvimDarkGreen",
+    bg = "NvimDarkGrey1",
+})
+
 vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
 local git_blame = require('gitblame')
 
@@ -177,7 +217,6 @@ local lsp = {
 }
 
 require('lualine').setup {
-
     options = {
         icons_enabled = true,
         theme = theme,

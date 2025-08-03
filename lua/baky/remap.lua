@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 --Move between buffers
 vim.keymap.set("n", "<C-A-h>", "<cmd>bp<cr>")
