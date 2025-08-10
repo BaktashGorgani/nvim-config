@@ -1,7 +1,7 @@
 require("baky.remap")
 require("baky.settings")
 require("baky.lazy")
+require("baky.lsp")
 require("baky.autocmd")
 require("baky.colorscheme")
-require("baky.lsp")
 vim.cmd("Copilot disable")

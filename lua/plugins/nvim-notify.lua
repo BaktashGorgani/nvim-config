@@ -8,6 +8,7 @@ return {
             render = "compact",
             -- default timeout for notifications
             timeout = 2500,
+            merge_duplicates = true,
         })
 
         vim.keymap.set("n", "<esc>", function()
