@@ -39,10 +39,10 @@ return {
             prompts = {
                 -- Short git message
                 ShortCommit = {
-                    prompt = "#git:`staged`:Write a one line commit \z
+                    prompt = "##git://diff/staged\n\nWrite a one line commit \z
                     message for the staged changes with commitizen convention. \z
                     Format as a gitcommit code block. ",
-                    system_prompt = "#git:`staged`:Write a one line commit \z
+                    system_prompt = "##git://diff/staged\n\nWrite a one line commit\z
                     message for the staged changes with commitizen convention. \z
                     Format as a gitcommit code block. ",
                 }

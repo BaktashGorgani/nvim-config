@@ -1,6 +1,6 @@
 local ok_lspconfig, lspconfig = pcall(require, 'lspconfig')
 if not ok_lspconfig then
-    vim.notify('lspconfig not available', vim.log.levels.CRITICAL)
+    vim.notify('lspconfig not available', vim.log.levels.ERROR)
 end
 
 local ok_mason, mason = pcall(require, 'mason')
