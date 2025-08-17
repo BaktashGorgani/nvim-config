@@ -1,9 +1,15 @@
 return {
-    { 'neovim/nvim-lspconfig' },
-    { 'williamboman/mason.nvim' },
+    { 'neovim/nvim-lspconfig', lazy = false, priority = 1000 },
+    { 'williamboman/mason.nvim', lazy = false, priority = 1000 },
     {
         'williamboman/mason-lspconfig.nvim',
+        lazy = false,
+        priority = 1000,
         dependencies = { 'williamboman/mason.nvim', 'neovim/nvim-lspconfig' },
+        config = function()
+            -- Run LSP setup only after mason-lspconfig is available to avoid duplicate clients
+            require('baky.lsp')
+        end,
     },
     { "Nash0x7E2/awesome-flutter-snippets" },
     { "rafamadriz/friendly-snippets" },

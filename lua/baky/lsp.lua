@@ -21,7 +21,7 @@ else
 end
 
 local on_attach = function(client, bufnr)
-    vim.notify('LSP attached: '..client.name..' to buffer '..bufnr, vim.log.levels.INFO)
+    vim.notify(('LSP attached (id=%s): %s to buffer %s'):format(client.id, client.name, bufnr), vim.log.levels.INFO)
     local opts = { buffer = bufnr, noremap = true, silent = true }
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -83,7 +83,6 @@ local function setup_server(server)
 end
 
 if type(mason_lspconfig.setup_handlers) == 'function' then
-    vim.notify('Configuring servers via mason-lspconfig handlers', vim.log.levels.INFO)
     mason_lspconfig.setup_handlers({
         function(server)
             setup_server(server)
@@ -93,23 +92,6 @@ if type(mason_lspconfig.setup_handlers) == 'function' then
         end,
     })
 else
-    vim.notify('mason-lspconfig.setup_handlers unavailable; falling back to manual setup', vim.log.levels.WARN)
-    local installed = {}
-    if type(mason_lspconfig.get_installed_servers) == 'function' then
-        installed = mason_lspconfig.get_installed_servers()
-        if #installed == 0 then
-            vim.notify('No servers reported by mason-lspconfig; using default list', vim.log.levels.WARN)
-            installed = { 'lua_ls', 'bashls', 'gopls', 'rust_analyzer', 'jedi_language_server' }
-        end
-    else
-        vim.notify('mason-lspconfig.get_installed_servers unavailable; using default list', vim.log.levels.WARN)
-        installed = { 'lua_ls', 'bashls', 'gopls', 'rust_analyzer', 'jedi_language_server' }
-    end
-    for _, server in ipairs(installed) do
-        setup_server(server)
-    end
-end
-
-if lspconfig.hyprls then
-    lspconfig.hyprls.setup({ on_attach = on_attach })
+    -- mason-lspconfig not ready; do nothing (plugin loader will run this module when ready)
+    return
 end
