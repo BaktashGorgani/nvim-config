@@ -1,5 +1,17 @@
 return {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
+    opts = {},
+    config = function(_, opts)
+        local npairs = require('nvim-autopairs')
+        local Rule = require('nvim-autopairs.rule')
+        local cond = require('nvim-autopairs.conds')
+
+        npairs.setup(opts)
+
+        npairs.add_rules({
+            Rule('<', '>')
+                :with_move(cond.done())
+        })
+    end,
 }
