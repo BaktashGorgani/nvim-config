@@ -1,5 +1,9 @@
 return {
-    { 'neovim/nvim-lspconfig', lazy = false, priority = 1000 },
+    {
+        'neovim/nvim-lspconfig',
+        lazy = false,
+        priority = 1000
+    },
     { 'williamboman/mason.nvim', lazy = false, priority = 1000 },
     {
         'williamboman/mason-lspconfig.nvim',
@@ -19,4 +23,9 @@ return {
     },
     { 'momota/cisco.vim' },
     { 'alker0/chezmoi.vim' },
+    {
+        'mrcjkb/rustaceanvim',
+        version = '^6',
+        lazy = false,
+    }
 }

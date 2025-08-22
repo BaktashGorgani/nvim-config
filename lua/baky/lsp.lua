@@ -21,25 +21,6 @@ else
     })
 end
 
-local on_attach = function(client, bufnr)
-    vim.notify(('LSP attached (id=%s): %s to buffer %s'):format(client.id, client.name, bufnr), vim.log.levels.INFO)
-    local opts = { buffer = bufnr, noremap = true, silent = true }
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({'n','v'}, '<A-TAB>', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', '<leader>ff', function()
-        vim.notify('LSP formatting requested', vim.log.levels.DEBUG)
-        vim.lsp.buf.format({ async = true })
-    end, opts)
-    vim.keymap.set('n', '[d', vim.diagnostic.get_prev, opts)
-    vim.keymap.set('n', ']d', vim.diagnostic.get_next, opts)
-    vim.notify('on_attach completed for '..client.name, vim.log.levels.INFO)
-end
-
 vim.diagnostic.config({
     virtual_text = true,
     signs = true,
@@ -72,12 +53,11 @@ local function setup_server(server)
                 end
                 return true
             end,
-            on_attach = on_attach,
         })
         return
     end
     if lspconfig[server] then
-        lspconfig[server].setup({ on_attach = on_attach })
+        lspconfig[server].setup()
     else
         vim.notify('LSP server not found in lspconfig: '..server, vim.log.levels.WARN)
     end

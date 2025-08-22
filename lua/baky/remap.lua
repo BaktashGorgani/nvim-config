@@ -68,8 +68,8 @@ vim.keymap.set("n", "<leader>P", [["+P]])
 --CTRL + C to Escape
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
---Replace word under cursor
-vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+----Replace word under cursor
+--vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --Make file executable
 vim.keymap.set("n", "<leader>ex", "<cmd>!chmod +x %<CR>", { silent = true })
@@ -78,3 +78,20 @@ vim.keymap.set("n", "<leader>ex", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+--LSP
+local remappable = { silent = true }
+local noremappable = { silent = true, noremap = true }
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, noremappable)
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, noremappable)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, noremappable)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, noremappable)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, remappable)
+vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, noremappable)
+vim.keymap.set({'n','v'}, '<leader>s', vim.lsp.buf.code_action, remappable)
+vim.keymap.set('n', '<leader>ff', function()
+    vim.notify('LSP formatting requested', vim.log.levels.DEBUG)
+    vim.lsp.buf.format({ async = true })
+end, noremappable)
+vim.keymap.set('n', '[d', vim.diagnostic.get_prev, noremappable)
+vim.keymap.set('n', ']d', vim.diagnostic.get_next, noremappable)
