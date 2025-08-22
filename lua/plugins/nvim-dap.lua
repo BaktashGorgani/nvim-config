@@ -20,7 +20,7 @@ return {
             { '<leader>df', '<cmd>Telescope dap frames<cr>', desc = "Dap - Frames" },
             { '<leader>dh', '<cmd>Telescope dap commands<cr>', desc = "Dap - Commands" },
             { '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end, desc = "Dap - Diagnostics" },
-        }
+        },
     },
     {
         "mfussenegger/nvim-dap-python",
@@ -120,5 +120,10 @@ return {
                 dapui.open()
             end
         end
+    },
+    {
+        'mrcjkb/rustaceanvim',
+        version = '^6',
+        lazy = false,
     }
 }
