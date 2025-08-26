@@ -17,7 +17,7 @@ if not ok_mason_lsp then
 else
     mason_lspconfig.setup({
         ensure_installed = { 'lua_ls', 'bashls', 'gopls', 'rust_analyzer', 'jedi_language_server', 'html' },
-        automatic_enable = { exclude = { 'rust_analyzer'}, },
+        automatic_enable = { exclude = { 'rust_analyzer' }, },
     })
 end
 
