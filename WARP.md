@@ -18,7 +18,7 @@ Language tooling (invoked via Neovim)
 - Formatters/linters (Python):
   - Black and isort run on save via autocmds (plugins/black.lua, plugins/isort.nvim.lua).
   - nvim-lint triggers mypy on BufWritePost.
-- Treesitter: ensure_installed includes C, Lua, Vim, Query, Elixir/Heex, JS/HTML, Python, Go; auto_install = true.
+- Treesitter (nvim-treesitter main branch, plugins/nvim-treesitter.lua): installs C, Lua, Vim, Query, Elixir/Heex, JS/HTML, Python, Go up front; a FileType autocmd starts highlighting and indentation for every filetype and installs a missing parser on first use (replaces the old auto_install).
 
 Key dev flows
 - Plugins are declared as specs under lua/plugins/*.lua and loaded by lazy.nvim via lua/baky/lazy.lua. Use the headless sync command above after changing specs.
@@ -62,4 +62,5 @@ Notes for future changes
 - After modifying lua/plugins/*.lua, run a plugin sync/update (see headless command) to ensure new specs are installed.
 - For Python dev, ensure debugpy is installed in ~/.virtualenvs/debugpy; adjust the path in plugins/nvim-dap.lua if your environment differs.
 - If lua_ls lacks workspace settings, lsp.lua supplies a default that disables third-party checks and adds VIMRUNTIME to the library.
+- nvim-treesitter uses the main branch (a full rewrite: no nvim-treesitter.configs, no lazy-loading). Building parsers needs the tree-sitter CLI (0.26.1+, from a package manager, not npm), a C compiler, curl and tar, plus Neovim 0.12+.
 
