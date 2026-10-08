@@ -1,1 +1,4 @@
-
+# lazy.nvim rewrites this on every plugin install/update. Keep it local instead
+# of committing it: a stale pinned lockfile broke fresh installs (it pinned
+# nvim-treesitter to a branch the spec no longer matched).
+/lazy-lock.json
