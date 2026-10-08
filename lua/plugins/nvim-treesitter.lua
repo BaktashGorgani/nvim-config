@@ -21,6 +21,9 @@ return {
             "html",
             "python",
             "go",
+            "gdscript",
+            "godot_resource",
+            "gdshader",
         })
 
         local function enable(buf, lang)

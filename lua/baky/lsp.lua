@@ -29,6 +29,12 @@ vim.diagnostic.config({
     severity_sort = true,
 })
 
+-- Godot: the GDScript language server is built into the Godot editor itself and
+-- is reached over TCP (127.0.0.1:6005 by default, override with $GDScript_Port),
+-- so mason cannot install it. The editor must be running for the client to attach.
+-- nvim-lspconfig ships lsp/gdscript.lua, so vim.lsp.enable picks the config up.
+vim.lsp.enable('gdscript')
+
 local function setup_server(server)
     if server == 'lua_ls' then
         lspconfig.lua_ls.setup({
