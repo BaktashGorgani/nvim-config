@@ -22,14 +22,8 @@ return {
             fuzzy = { implementation = "rust" },
             sources = {
                 -- add lazydev to your completion providers
-                default = { "copilot", "avante", "lazydev", "lsp", "path", "snippets", "buffer" },
+                default = { "avante", "lazydev", "lsp", "path", "snippets", "buffer" },
                 providers = {
-                    copilot = {
-                        name = "copilot",
-                        module = "blink-copilot",
-                        score_offset = 100,
-                        async = true,
-                    },
                     avante = {
                         module = 'blink-cmp-avante',
                         name = 'Avante',
